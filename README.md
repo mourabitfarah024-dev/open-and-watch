@@ -27,19 +27,6 @@ body {
 }
 .cake:hover { transform: scale(1.2); }
 
-/* Photo */
-#photo {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  position: absolute;
-  left: 50%;
-  top: 25%;
-  transform: translate(-50%, -50%);
-  display: none;
-  border: 4px solid white;
-}
-
 /* Message */
 #message {
   margin-top: 20px;
@@ -89,8 +76,6 @@ body {
 
 <div id="countdown">3</div>
 <div class="cake" onclick="startMagic()">🎂</div>
-
-<img id="photo" src="PUT_IMAGE_HERE" alt="Sata">
 
 <div id="message"></div>
 
@@ -160,7 +145,7 @@ function startOrbitText() {
     const R = 150; // size of heart
     for(let i=0;i<spans.length;i++){
       const t = (i*10 + angle) * Math.PI/180;
-      // Parametric heart equation
+      // Heart parametric equation
       const x = R * 16 * Math.pow(Math.sin(t),3) / 16;
       const y = -R * (13*Math.cos(t) - 5*Math.cos(2*t) - 2*Math.cos(3*t) - Math.cos(4*t)) / 16;
       spans[i].style.left = 200 + x + "px";
@@ -174,7 +159,6 @@ function startOrbitText() {
 function startMagic(){
   document.getElementById("music").play();
   document.querySelector(".cake").style.display="none";
-  document.getElementById("photo").style.display="block";
 
   fireworks();
   typeText();
@@ -184,3 +168,4 @@ function startMagic(){
 
 </body>
 </html>
+
